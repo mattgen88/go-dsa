@@ -13,7 +13,7 @@ export const categories = [
     description: 'Non-linear tree hierarchies, search trees, heaps, and prefix tries.',
     icon: 'GitFork',
     color: 'cyan',
-    topicIds: ['binary-search-tree', 'heaps-priority-queues', 'tries']
+    topicIds: ['binary-search-tree', 'tree-traversals', 'heaps-priority-queues', 'tries']
   },
   {
     id: 'graphs',

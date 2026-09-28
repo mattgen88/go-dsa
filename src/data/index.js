@@ -4,6 +4,7 @@ import { linkedListsTopic } from './topics/linkedLists'
 import { stacksQueuesTopic } from './topics/stacksQueues'
 import { hashMapsTopic } from './topics/hashMaps'
 import { treesTopic } from './topics/trees'
+import { treeTraversalsTopic } from './topics/treeTraversals'
 import { heapsTopic } from './topics/heaps'
 import { triesTopic } from './topics/tries'
 import { graphsTopic } from './topics/graphs'
@@ -20,6 +21,7 @@ export const topicList = [
   stacksQueuesTopic,
   hashMapsTopic,
   treesTopic,
+  treeTraversalsTopic,
   heapsTopic,
   triesTopic,
   graphsTopic,

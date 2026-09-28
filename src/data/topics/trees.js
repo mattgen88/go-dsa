@@ -71,6 +71,16 @@ func Search[T cmp.Ordered](root *TreeNode[T], target T) bool {
 	return Search(root.Right, target)
 }
 
+// PreOrder traversal: Root -> Left -> Right
+func PreOrder[T cmp.Ordered](root *TreeNode[T], result *[]T) {
+	if root == nil {
+		return
+	}
+	*result = append(*result, root.Val)
+	PreOrder(root.Left, result)
+	PreOrder(root.Right, result)
+}
+
 // InOrder traversal: Left -> Root -> Right (Produces sorted order)
 func InOrder[T cmp.Ordered](root *TreeNode[T], result *[]T) {
 	if root == nil {
@@ -79,6 +89,16 @@ func InOrder[T cmp.Ordered](root *TreeNode[T], result *[]T) {
 	InOrder(root.Left, result)
 	*result = append(*result, root.Val)
 	InOrder(root.Right, result)
+}
+
+// PostOrder traversal: Left -> Right -> Root
+func PostOrder[T cmp.Ordered](root *TreeNode[T], result *[]T) {
+	if root == nil {
+		return
+	}
+	PostOrder(root.Left, result)
+	PostOrder(root.Right, result)
+	*result = append(*result, root.Val)
 }
 
 // LevelOrder traversal (BFS) using slice queue
@@ -119,17 +139,26 @@ func main() {
 		root = Insert(root, v)
 	}
 
-	var sorted []int
-	InOrder(root, &sorted)
-	fmt.Printf("In-Order Traversal (Sorted): %v\\n", sorted)
+	var preOrderVals []int
+	var inOrderVals []int
+	var postOrderVals []int
+
+	PreOrder(root, &preOrderVals)
+	fmt.Printf("Pre-Order Traversal  (Root->L->R): %v\\n", preOrderVals)
+
+	InOrder(root, &inOrderVals)
+	fmt.Printf("In-Order Traversal   (L->Root->R): %v (Sorted!)\\n", inOrderVals)
+
+	PostOrder(root, &postOrderVals)
+	fmt.Printf("Post-Order Traversal (L->R->Root): %v\\n", postOrderVals)
 
 	levels := LevelOrder(root)
-	fmt.Println("Level-Order Traversal (BFS):")
+	fmt.Println("Level-Order Traversal (BFS row by row):")
 	for i, lvl := range levels {
 		fmt.Printf("  Level %d: %v\\n", i, lvl)
 	}
 
-	fmt.Printf("Search 40: %t (Expected: true)\\n", Search(root, 40))
+	fmt.Printf("\\nSearch 40: %t (Expected: true)\\n", Search(root, 40))
 	fmt.Printf("Search 99: %t (Expected: false)\\n", Search(root, 99))
 }`,
     practical: `package main
