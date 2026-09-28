@@ -12,20 +12,29 @@ An interactive Data Structures and Algorithms learning and practice platform bui
 ## 🚀 Features
 
 - **Categorized Curriculum & Explorer**:
+  - **Top Interview Must-Knows**: LRU Cache (O(1) Hash Map + Doubly Linked List), Interval Scheduling & Merging, Binary Search on Answer Space (Monotonic Predicates).
+  - **Database Internals & Storage**: Bloom Filters in Storage Engines (preventing disk I/O), LSM-Trees & SSTables (MemTable, WAL, compaction in RocksDB/Cassandra), B+ Tree Database Indexing (MySQL InnoDB range scans).
+  - **Distributed Systems & Consensus**: Consistent Hashing & Virtual Nodes (Dynamo/Cassandra ring routing), Raft Consensus Protocol (Leader election, heartbeats, quorum), Vector Clocks & Causality (conflict detection in leaderless stores).
+  - **Networking & Flow Control**: Rate Limiting (Token Bucket & Leaky Bucket algorithms), TCP Sliding Window Flow Control (sequence numbers, cumulative ACKs, BDP).
   - **Linear Structures**: Arrays & Dynamic Slices (slice headers, capacity doubling, sub-slicing), Singly & Doubly Linked Lists, Stacks & Queues, Hash Tables & Go Map internals (`hmap`/`bmap`).
-  - **Trees & Hierarchical**: Binary Search Trees (BST), Heaps & Priority Queues (`container/heap`), Tries (Prefix Trees).
+  - **Trees & Hierarchical**: Binary Search Trees (BST), Tree Traversals (Pre/In/Post/Level-Order DFS & BFS, N-ary trees), Heaps & Priority Queues (`container/heap`), Tries (Prefix Trees).
   - **Graph Structures**: Adjacency lists, Breadth-First Search (BFS), Depth-First Search (DFS), Dijkstra's shortest path, Directed cycle detection.
   - **Sorting Algorithms**: Bubble, Selection, Insertion Sort (why Go uses it for small slices), Merge Sort, Quick Sort (Lomuto partitioning & Go's `pdqsort`).
   - **Searching & Pointer Patterns**: Binary Search, lower/upper bounds (`slices.BinarySearch`), Two Pointers, Sliding Window.
   - **Advanced Paradigms**: Dynamic Programming (memoization vs tabulation), Recursion & Backtracking (Subsets, Permutations, N-Queens).
 
 - **Interactive Visualizers**:
+  - **LRU Cache Visualizer**: Watch MRU head promotions, tail evictions on cache overflow, and O(1) hash map links.
+  - **Consistent Hashing Ring**: 360° circular ring with node tokens and keys routing clockwise; add/remove nodes to observe minimal key migration.
+  - **Token Bucket Rate Limiter**: Interactive bucket with token refilling, request consumption, bursts, and 429 rate limit triggers.
+  - **Bloom Filter Bitset**: 16-bit array with multiple hash functions showing "Definitely NOT in set" vs "Probably in set".
+  - **Merge Intervals Timeline**: Numeric timeline showing overlapping interval bars consolidating into non-overlapping spans.
   - **Slice Growth & Sub-slice Visualizer**: Watch capacity double when appending, inspect slice headers (`*ptr`, `len`, `cap`), and visualize sub-slice windows sharing memory.
   - **Linked List Node Chainer**: Interactive pointer transitions, prepend, append, delete, and list reversal.
   - **Stack & Queue Container**: Vertical LIFO tube and horizontal FIFO pipe animations.
   - **Binary Search Stepper**: Highlights `low`, `high`, `mid`, and visualizes eliminating the search space.
   - **Bar Chart Sorting Player**: Step-by-step or auto-play Bubble, Selection, and Insertion sorts with color-coded comparisons and swaps.
-  - **Binary Search Tree Graph**: SVG tree rendering with insertion, search path highlight, and In-Order traversal playback.
+  - **Binary Search Tree Graph**: SVG tree rendering with insertion, search path highlight, and In-Order/Pre-Order/Post-Order/Level-Order playback.
   - **Graph Network Traversal**: Step-by-step BFS and DFS node exploration.
   - **Two Pointers Convergence**: Visual pointer markers moving inward with sum calculations.
 
