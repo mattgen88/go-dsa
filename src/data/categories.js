@@ -1,5 +1,37 @@
 export const categories = [
   {
+    id: 'interview-prep',
+    name: 'Top Interview Must-Knows',
+    description: 'High-frequency systems and coding interview patterns asked at top tech companies.',
+    icon: 'Briefcase',
+    color: 'amber',
+    topicIds: ['lru-cache', 'merge-intervals', 'binary-search-answer']
+  },
+  {
+    id: 'databases',
+    name: 'Database Internals & Storage',
+    description: 'Storage engine architectures, B+ trees, LSM trees, and Bloom filters.',
+    icon: 'Database',
+    color: 'rose',
+    topicIds: ['bloom-filter', 'lsm-tree', 'b-plus-tree']
+  },
+  {
+    id: 'distributed',
+    name: 'Distributed Systems & Consensus',
+    description: 'Consistent hashing, leader election, Raft consensus, and vector clocks.',
+    icon: 'Server',
+    color: 'emerald',
+    topicIds: ['consistent-hashing', 'raft-consensus', 'vector-clocks']
+  },
+  {
+    id: 'networking',
+    name: 'Networking & Flow Control',
+    description: 'Rate limiting token/leaky buckets, TCP sliding window, and network throughput.',
+    icon: 'Wifi',
+    color: 'cyan',
+    topicIds: ['token-bucket', 'sliding-window-protocol']
+  },
+  {
     id: 'linear-structures',
     name: 'Linear Data Structures',
     description: 'Sequential memory layouts, pointer chains, and contiguous blocks.',

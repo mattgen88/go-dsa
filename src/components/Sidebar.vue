@@ -8,7 +8,11 @@ import {
   Search,
   Zap,
   CheckCircle2,
-  ChevronRight
+  ChevronRight,
+  Briefcase,
+  Database,
+  Server,
+  Wifi
 } from 'lucide-vue-next'
 
 const props = defineProps({
@@ -32,8 +36,16 @@ const props = defineProps({
 
 const emit = defineEmits(['select-topic', 'close-mobile'])
 
+const totalTopicsCount = computed(() => {
+  return props.categories.reduce((acc, cat) => acc + (cat.topics ? cat.topics.length : 0), 0)
+})
+
 function getCategoryIcon(name) {
   switch (name) {
+    case 'Briefcase': return Briefcase
+    case 'Database': return Database
+    case 'Server': return Server
+    case 'Wifi': return Wifi
     case 'Layers': return Layers
     case 'GitFork': return GitFork
     case 'Share2': return Share2
@@ -69,7 +81,7 @@ function getDifficultyBadge(diff) {
     <div class="px-5 py-4 border-b border-slate-800/80 flex items-center justify-between">
       <span class="text-xs uppercase tracking-wider font-semibold text-slate-400 font-mono">Curriculum</span>
       <span class="text-[11px] px-2 py-0.5 rounded-full bg-slate-900 border border-slate-800 text-cyan-400 font-mono">
-        14 Topics
+        {{ totalTopicsCount }} Topics
       </span>
     </div>
 

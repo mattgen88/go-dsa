@@ -8,6 +8,11 @@ import SortingVisualizer from './visualizers/SortingVisualizer.vue'
 import TreeVisualizer from './visualizers/TreeVisualizer.vue'
 import GraphVisualizer from './visualizers/GraphVisualizer.vue'
 import TwoPointersVisualizer from './visualizers/TwoPointersVisualizer.vue'
+import LRUVisualizer from './visualizers/LRUVisualizer.vue'
+import ConsistentHashingVisualizer from './visualizers/ConsistentHashingVisualizer.vue'
+import TokenBucketVisualizer from './visualizers/TokenBucketVisualizer.vue'
+import BloomFilterVisualizer from './visualizers/BloomFilterVisualizer.vue'
+import IntervalsVisualizer from './visualizers/IntervalsVisualizer.vue'
 
 const props = defineProps({
   type: {
@@ -35,6 +40,16 @@ const currentComponent = computed(() => {
       return GraphVisualizer
     case 'two-pointers':
       return TwoPointersVisualizer
+    case 'lru':
+      return LRUVisualizer
+    case 'consistent-hashing':
+      return ConsistentHashingVisualizer
+    case 'token-bucket':
+      return TokenBucketVisualizer
+    case 'bloom-filter':
+      return BloomFilterVisualizer
+    case 'intervals':
+      return IntervalsVisualizer
     default:
       return ArrayVisualizer
   }
