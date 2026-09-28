@@ -14,13 +14,18 @@ import {
   Code2,
   Terminal,
   Cpu,
-  Layers
+  Layers,
+  Lightbulb,
+  Building2,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-vue-next'
 import ComplexityBadge from './ComplexityBadge.vue'
 import Visualizer from './Visualizer.vue'
 import CodeEditor from './CodeEditor.vue'
 import OutputConsole from './OutputConsole.vue'
 import { runGoCode, formatGoCode, shareToPlayground } from '../services/playground'
+import { realWorldUses } from '../data/realWorldUses.js'
 
 const props = defineProps({
   topic: {
@@ -51,9 +56,11 @@ const consoleErrors = ref('')
 const executionDuration = ref(0)
 const runnerSource = ref('')
 
-// Copied feedback
-const copied = ref(false)
-const isSharing = ref(false)
+// Real-world uses toggle and data
+const showRealWorld = ref(true)
+const topicRealWorld = computed(() => {
+  return realWorldUses[props.topic?.id] || null
+})
 
 // Sync code whenever topic or activeCodeTab changes
 function syncEditorCode() {
@@ -184,6 +191,69 @@ function triggerCelebration() {
             :label="key"
             :value="val"
           />
+        </div>
+      </div>
+    </div>
+
+    <!-- Real-World Applications & Why Learn It Card -->
+    <div
+      v-if="topicRealWorld"
+      class="bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-slate-950 border border-indigo-500/30 rounded-2xl p-5 shadow-lg space-y-4"
+    >
+      <div class="flex items-center justify-between cursor-pointer select-none" @click="showRealWorld = !showRealWorld">
+        <div class="flex items-center gap-2.5">
+          <div class="p-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400">
+            <Lightbulb class="w-4 h-4" />
+          </div>
+          <div>
+            <h3 class="text-sm font-bold text-slate-100 tracking-tight flex items-center gap-2">
+              <span>Why Learn This?</span>
+              <span class="text-xs font-normal text-slate-400">(The Real-World "Click")</span>
+            </h3>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-[11px] font-mono uppercase tracking-wider text-indigo-400 bg-indigo-950/60 px-2 py-0.5 rounded border border-indigo-800/40">
+            Production Context
+          </span>
+          <button class="p-1 text-slate-400 hover:text-slate-200 transition">
+            <component :is="showRealWorld ? ChevronUp : ChevronDown" class="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
+      <div v-show="showRealWorld" class="space-y-4 pt-1">
+        <!-- The Core Intuition / Why Learn It -->
+        <p class="text-xs text-slate-300 leading-relaxed bg-slate-950/50 p-3.5 rounded-xl border border-slate-800/80">
+          <strong class="text-amber-400 font-semibold">Engineering Intuition: </strong>
+          {{ topicRealWorld.whyLearn }}
+        </p>
+
+        <!-- Production Systems Grid -->
+        <div class="space-y-2">
+          <div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+            <Building2 class="w-3.5 h-3.5 text-indigo-400" />
+            <span>Where It Powers Production Systems</span>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-2.5">
+            <div
+              v-for="(system, idx) in topicRealWorld.productionSystems"
+              :key="idx"
+              class="p-3 bg-slate-950/70 border border-slate-800/90 rounded-xl space-y-1.5 hover:border-indigo-500/40 transition group"
+            >
+              <div class="flex items-center justify-between gap-1">
+                <span class="text-xs font-bold text-slate-200 group-hover:text-indigo-300 transition">{{ system.name }}</span>
+                <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800 truncate max-w-[120px]">{{ system.role }}</span>
+              </div>
+              <p class="text-[11px] text-slate-400 leading-relaxed">{{ system.description }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- When to Reach For It -->
+        <div class="flex items-start gap-2 pt-2 border-t border-slate-800/80 text-xs">
+          <span class="font-semibold text-emerald-400 shrink-0 font-mono text-[11px]">WHEN TO REACH FOR IT:</span>
+          <span class="text-slate-300 leading-relaxed">{{ topicRealWorld.whenToUse }}</span>
         </div>
       </div>
     </div>
