@@ -12,7 +12,8 @@ import {
   Briefcase,
   Database,
   Server,
-  Wifi
+  Wifi,
+  Activity
 } from 'lucide-vue-next'
 
 const props = defineProps({
@@ -46,6 +47,7 @@ function getCategoryIcon(name) {
     case 'Database': return Database
     case 'Server': return Server
     case 'Wifi': return Wifi
+    case 'Activity': return Activity
     case 'Layers': return Layers
     case 'GitFork': return GitFork
     case 'Share2': return Share2

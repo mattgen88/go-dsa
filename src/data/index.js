@@ -27,6 +27,7 @@ import { raftConsensusTopic } from './topics/raftConsensus.js'
 import { vectorClocksTopic } from './topics/vectorClocks.js'
 import { rateLimiterTopic } from './topics/rateLimiter.js'
 import { slidingWindowNetworkTopic } from './topics/slidingWindowNetwork.js'
+import { fourierTransformTopic } from './topics/fourierTransform.js'
 
 export const topicList = [
   // Top Interview Must-Knows
@@ -47,6 +48,9 @@ export const topicList = [
   // Networking
   rateLimiterTopic,
   slidingWindowNetworkTopic,
+
+  // Signal Processing & Math
+  fourierTransformTopic,
 
   // Classic Data Structures & Algorithms
   arraysTopic,

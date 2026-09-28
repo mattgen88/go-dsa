@@ -32,6 +32,14 @@ export const categories = [
     topicIds: ['token-bucket', 'sliding-window-protocol']
   },
   {
+    id: 'computational',
+    name: 'Signal Processing & Math',
+    description: 'Fast Fourier Transform (Cooley-Tukey FFT), frequency decomposition, and O(N log N) polynomial multiplication.',
+    icon: 'Activity',
+    color: 'indigo',
+    topicIds: ['fourier-transform']
+  },
+  {
     id: 'linear-structures',
     name: 'Linear Data Structures',
     description: 'Sequential memory layouts, pointer chains, and contiguous blocks.',

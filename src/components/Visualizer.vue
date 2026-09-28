@@ -13,6 +13,7 @@ import ConsistentHashingVisualizer from './visualizers/ConsistentHashingVisualiz
 import TokenBucketVisualizer from './visualizers/TokenBucketVisualizer.vue'
 import BloomFilterVisualizer from './visualizers/BloomFilterVisualizer.vue'
 import IntervalsVisualizer from './visualizers/IntervalsVisualizer.vue'
+import FFTVisualizer from './visualizers/FFTVisualizer.vue'
 
 const props = defineProps({
   type: {
@@ -50,6 +51,8 @@ const currentComponent = computed(() => {
       return BloomFilterVisualizer
     case 'intervals':
       return IntervalsVisualizer
+    case 'fft':
+      return FFTVisualizer
     default:
       return ArrayVisualizer
   }
