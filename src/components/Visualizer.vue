@@ -14,6 +14,7 @@ import TokenBucketVisualizer from './visualizers/TokenBucketVisualizer.vue'
 import BloomFilterVisualizer from './visualizers/BloomFilterVisualizer.vue'
 import IntervalsVisualizer from './visualizers/IntervalsVisualizer.vue'
 import FFTVisualizer from './visualizers/FFTVisualizer.vue'
+import MerkleTreeVisualizer from './visualizers/MerkleTreeVisualizer.vue'
 
 const props = defineProps({
   type: {
@@ -53,6 +54,8 @@ const currentComponent = computed(() => {
       return IntervalsVisualizer
     case 'fft':
       return FFTVisualizer
+    case 'merkle':
+      return MerkleTreeVisualizer
     default:
       return ArrayVisualizer
   }

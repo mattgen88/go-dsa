@@ -40,6 +40,14 @@ export const categories = [
     topicIds: ['fourier-transform']
   },
   {
+    id: 'cryptography',
+    name: 'Cryptography & Hashing',
+    description: 'Cryptographic hash functions, Merkle trees, symmetric AES-GCM, asymmetric RSA, and HMAC signatures.',
+    icon: 'Lock',
+    color: 'rose',
+    topicIds: ['sha256-merkle-tree', 'aes-gcm', 'rsa-cryptography', 'hmac-signatures']
+  },
+  {
     id: 'linear-structures',
     name: 'Linear Data Structures',
     description: 'Sequential memory layouts, pointer chains, and contiguous blocks.',

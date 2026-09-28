@@ -28,6 +28,10 @@ import { vectorClocksTopic } from './topics/vectorClocks.js'
 import { rateLimiterTopic } from './topics/rateLimiter.js'
 import { slidingWindowNetworkTopic } from './topics/slidingWindowNetwork.js'
 import { fourierTransformTopic } from './topics/fourierTransform.js'
+import { merkleTreeTopic } from './topics/merkleTree.js'
+import { aesGcmTopic } from './topics/aesGcm.js'
+import { rsaTopic } from './topics/rsa.js'
+import { hmacTopic } from './topics/hmac.js'
 
 export const topicList = [
   // Top Interview Must-Knows
@@ -48,6 +52,12 @@ export const topicList = [
   // Networking
   rateLimiterTopic,
   slidingWindowNetworkTopic,
+
+  // Cryptography & Hashing
+  merkleTreeTopic,
+  aesGcmTopic,
+  rsaTopic,
+  hmacTopic,
 
   // Signal Processing & Math
   fourierTransformTopic,

@@ -12,14 +12,16 @@ An interactive Data Structures and Algorithms learning and practice platform bui
 ## 🚀 Features
 
 - **Categorized Curriculum & Explorer**:
-  - **Top Interview Must-Knows**: LRU Cache (O(1) Hash Map + Doubly Linked List), Interval Scheduling & Merging, Binary Search on Answer Space (Monotonic Predicates).
-  - **Database Internals & Storage**: Bloom Filters in Storage Engines (preventing disk I/O), LSM-Trees & SSTables (MemTable, WAL, compaction in RocksDB/Cassandra), B+ Tree Database Indexing (MySQL InnoDB range scans).
-  - **Distributed Systems & Consensus**: Consistent Hashing & Virtual Nodes (Dynamo/Cassandra ring routing), Raft Consensus Protocol (Leader election, heartbeats, quorum), Vector Clocks & Causality (conflict detection in leaderless stores).
-  - **Networking & Flow Control**: Rate Limiting (Token Bucket & Leaky Bucket algorithms), TCP Sliding Window Flow Control (sequence numbers, cumulative ACKs, BDP).
-  - **Linear Structures**: Arrays & Dynamic Slices (slice headers, capacity doubling, sub-slicing), Singly & Doubly Linked Lists, Stacks & Queues, Hash Tables & Go Map internals (`hmap`/`bmap`).
-  - **Trees & Hierarchical**: Binary Search Trees (BST), Tree Traversals (Pre/In/Post/Level-Order DFS & BFS, N-ary trees), Heaps & Priority Queues (`container/heap`), Tries (Prefix Trees).
+  - **Top Interview Must-Knows**: Least Recently Used (LRU) Cache ($O(1)$ Hash Map + Doubly Linked List), Interval Scheduling & Merging, Binary Search on Answer Space (Monotonic Predicates).
+  - **Cryptography & Hashing**: Secure Hash Algorithm 256-bit (SHA-256) & Merkle Trees, Advanced Encryption Standard in Galois/Counter Mode (AES-GCM Authenticated Encryption), Rivest-Shamir-Adleman (RSA) Public-Key Cryptography, Hash-based Message Authentication Code (HMAC) & Application Programming Interface (API) Request Signing.
+  - **Signal Processing & Math**: Fast Fourier Transform (Cooley-Tukey FFT), frequency decomposition, and $O(N \log N)$ polynomial multiplication.
+  - **Database Internals & Storage**: Bloom Filters in Storage Engines (preventing disk Input/Output), Log-Structured Merge-tree (LSM-Tree) & Sorted String Tables (SSTables, MemTable, Write-Ahead Log [WAL], compaction in RocksDB and Cassandra), B+ Tree Database Indexing (MySQL InnoDB range scans).
+  - **Distributed Systems & Consensus**: Consistent Hashing & Virtual Nodes (Amazon DynamoDB and Apache Cassandra ring routing), Raft Consensus Protocol (Leader election, heartbeats, quorum), Vector Clocks & Causality (conflict detection in leaderless distributed stores).
+  - **Networking & Flow Control**: Rate Limiting (Token Bucket & Leaky Bucket algorithms), Transmission Control Protocol (TCP) Sliding Window Flow Control (sequence numbers, cumulative Acknowledgments [ACK], Bandwidth-Delay Product [BDP]).
+  - **Linear Structures**: Arrays & Dynamic Slices (slice headers, capacity doubling, sub-slicing), Singly & Doubly Linked Lists, Stacks (Last In, First Out [LIFO]) & Queues (First In, First Out [FIFO]), Hash Tables & Go Map internals (`hmap`/`bmap`).
+  - **Trees & Hierarchical**: Binary Search Trees (BST), Tree Traversals (Pre/In/Post/Level-Order Depth-First Search [DFS] & Breadth-First Search [BFS], N-ary general trees), Heaps & Priority Queues (`container/heap`), Tries (Prefix Trees).
   - **Graph Structures**: Adjacency lists, Breadth-First Search (BFS), Depth-First Search (DFS), Dijkstra's shortest path, Directed cycle detection.
-  - **Sorting Algorithms**: Bubble, Selection, Insertion Sort (why Go uses it for small slices), Merge Sort, Quick Sort (Lomuto partitioning & Go's `pdqsort`).
+  - **Sorting Algorithms**: Bubble, Selection, Insertion Sort (why Go uses it for small slices), Merge Sort, Quick Sort (Lomuto partitioning & Go's pattern-defeating quicksort [pdqsort]).
   - **Searching & Pointer Patterns**: Binary Search, lower/upper bounds (`slices.BinarySearch`), Two Pointers, Sliding Window.
   - **Advanced Paradigms**: Dynamic Programming (memoization vs tabulation), Recursion & Backtracking (Subsets, Permutations, N-Queens).
 
